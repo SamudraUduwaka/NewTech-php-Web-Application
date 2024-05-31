@@ -1,0 +1,566 @@
+@font-face {
+    font-family: "AsapR";
+    src: url("fonts/Asap-Regular.ttf");
+}
+
+@font-face {
+    font-family: "AsapI";
+    src: url("fonts/Asap-Italic.ttf");
+}
+
+* {
+    font-family: "AsapR";
+}
+
+
+/* verticalcarousel - vc*/
+
+.verticalcarousel {
+    height: 570px;
+}
+
+.vcwrapper {
+    background: linear-gradient(60deg, #420285, #08BDBD);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.vccarousel {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.vccarousel__item {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    padding: 0 12px;
+    opacity: 0;
+    filter: drop-shadow(0 2px 2px #555);
+    will-change: transform, opacity;
+    -webkit-animation: carousel-animate-vertical 27s linear infinite;
+    animation: carousel-animate-vertical 27s linear infinite;
+}
+
+.vccarousel__item:nth-child(1) {
+    -webkit-animation-delay: calc(3s * -1);
+    animation-delay: calc(3s * -1);
+}
+
+.vccarousel__item:nth-child(2) {
+    -webkit-animation-delay: calc(3s * 0);
+    animation-delay: calc(3s * 0);
+}
+
+.vccarousel__item:nth-child(3) {
+    -webkit-animation-delay: calc(3s * 1);
+    animation-delay: calc(3s * 1);
+}
+
+.vccarousel__item:nth-child(4) {
+    -webkit-animation-delay: calc(3s * 2);
+    animation-delay: calc(3s * 2);
+}
+
+.vccarousel__item:nth-child(5) {
+    -webkit-animation-delay: calc(3s * 3);
+    animation-delay: calc(3s * 3);
+}
+
+.vccarousel__item:nth-child(6) {
+    -webkit-animation-delay: calc(3s * 4);
+    animation-delay: calc(3s * 4);
+}
+
+.vccarousel__item:nth-child(7) {
+    -webkit-animation-delay: calc(3s * 5);
+    animation-delay: calc(3s * 5);
+}
+
+.vccarousel__item:nth-child(8) {
+    -webkit-animation-delay: calc(3s * 6);
+    animation-delay: calc(3s * 6);
+}
+
+.vccarousel__item:last-child {
+    -webkit-animation-delay: calc(-3s * 2);
+    animation-delay: calc(-3s * 2);
+}
+
+.vccarousel__item-head {
+    border-radius: 50%;
+    background-color: #d7f7fc;
+    width: 90px;
+    height: 90px;
+    padding: 14px;
+    position: relative;
+    margin-right: -45px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.vccarousel__item-body {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 16px 20px 16px 70px;
+}
+
+.vctitle {
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+@-webkit-keyframes carousel-animate-vertical {
+    0% {
+        transform: translateY(100%) scale(0.5);
+        opacity: 0;
+        visibility: hidden;
+    }
+    3%,
+    11.1111111111% {
+        transform: translateY(100%) scale(0.7);
+        opacity: 0.4;
+        visibility: visible;
+    }
+    14.1111111111%,
+    22.2222222222% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        visibility: visible;
+    }
+    25.2222222222%,
+    33.3333333333% {
+        transform: translateY(-100%) scale(0.7);
+        opacity: 0.4;
+        visibility: visible;
+    }
+    36.3333333333% {
+        transform: translateY(-100%) scale(0.5);
+        opacity: 0;
+        visibility: visible;
+    }
+    100% {
+        transform: translateY(-100%) scale(0.5);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes carousel-animate-vertical {
+    0% {
+        transform: translateY(100%) scale(0.5);
+        opacity: 0;
+        visibility: hidden;
+    }
+    3%,
+    11.1111111111% {
+        transform: translateY(100%) scale(0.7);
+        opacity: 0.4;
+        visibility: visible;
+    }
+    14.1111111111%,
+    22.2222222222% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        visibility: visible;
+    }
+    25.2222222222%,
+    33.3333333333% {
+        transform: translateY(-100%) scale(0.7);
+        opacity: 0.4;
+        visibility: visible;
+    }
+    36.3333333333% {
+        transform: translateY(-100%) scale(0.5);
+        opacity: 0;
+        visibility: visible;
+    }
+    100% {
+        transform: translateY(-100%) scale(0.5);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+/* verticalcarousel */
+
+
+/* cardlayout */
+
+.clcontainer {
+    /* position: absolute; */
+    height: 300px;
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    left: calc(50% - 300px);
+    display: flex;
+}
+
+.clcard {
+    display: flex;
+    height: 280px;
+    width: 180px;
+    background-color: #17141d;
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem #000;
+    /*   margin-left: -50px; */
+    transition: 0.4s ease-out;
+    position: relative;
+    left: 0px;
+}
+
+.clcard:not(:first-child) {
+    margin-left: -50px;
+}
+
+.clcard:hover {
+    transform: translateY(-20px);
+    transition: 0.4s ease-out;
+}
+
+.clcard:hover~.card {
+    position: relative;
+    left: 50px;
+    transition: 0.4s ease-out;
+}
+
+.cltitle {
+    color: white;
+    font-weight: 300;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+.clbar {
+    position: absolute;
+    top: 100px;
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 5px;
+    width: 96%;
+}
+
+.clemptybar {
+    background-color: #2e3033;
+    width: 100%;
+    height: 100%;
+}
+
+.clfilledbar {
+    position: absolute;
+    top: 0px;
+    z-index: 3;
+    width: 0px;
+    height: 100%;
+    background: rgb(0, 154, 217);
+    background: linear-gradient(90deg, rgba(0, 154, 217, 1) 0%, rgba(217, 147, 0, 1) 65%, rgba(255, 186, 0, 1) 100%);
+    transition: 0.6s ease-out;
+}
+
+.clcard:hover .clfilledbar {
+    width: 98%;
+    transition: 0.4s ease-out;
+}
+
+.clcircle {
+    position: absolute;
+    top: 150px;
+    left: calc(50% - 60px);
+}
+
+.clstroke {
+    stroke: white;
+    stroke-dasharray: 360;
+    stroke-dashoffset: 360;
+    transition: 0.6s ease-out;
+}
+
+svg {
+    fill: #17141d;
+    stroke-width: 2px;
+}
+
+.clcard:hover .clstroke {
+    stroke-dashoffset: 100;
+    transition: 0.6s ease-out;
+}
+
+
+/* cardlayout */
+
+
+/* navbar */
+
+#navbarlarge {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 50px 20px;
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+}
+
+#navbarlarge a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+    font-family: "AsapI";
+}
+
+#navbarlarge #logolarge {
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: -10px;
+    transition: 0.4s;
+}
+
+#navbarlarge a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#navbarlarge a.active {
+    background-color: rgb(132, 181, 230);
+    color: white;
+}
+
+#navbar-rightlarge {
+    float: right;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 580px) {
+    #navbarlarge {
+        padding: 20px 10px !important;
+    }
+    #navbarlarge a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    #navbar-rightlarge {
+        float: none;
+    }
+}
+
+#navbarsmall {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 50px 20px;
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+}
+
+#navbarsmall a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+#navbarsmall #logosmall {
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: -10px;
+    transition: 0.4s;
+}
+
+#navbarsmall a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#navbarsmall a.active {
+    background-color: rgb(132, 181, 230);
+    color: white;
+}
+
+#navbar-rightsmall {
+    float: right;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 580px) {
+    #navbarsmall {
+        padding: 20px 10px !important;
+    }
+    #navbarsmall a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    #navbar-rightsmall {
+        float: none;
+    }
+}
+
+#navbarsmall {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 50px 20px;
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+}
+
+#navbarsmall a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+    font-family: "AsapI";
+}
+
+#navbarsmall #logosmall {
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: -10px;
+    transition: 0.4s;
+}
+
+#navbarsmall a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#navbarsmall a.active {
+    background-color: rgb(132, 181, 230);
+    color: white;
+}
+
+#navbar-rightsmall {
+    float: right;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 580px) {
+    #navbarsmall {
+        padding: 20px 10px !important;
+    }
+    #navbarsmall a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    #navbar-rightsmall {
+        float: none;
+    }
+}
+
+
+/* navbar */
+
+
+/* signInSignUpOverlay */
+
+.overlay {
+    height: 100%;
+    width: 0%;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+
+/* signInSignUpOverlay */
+
+
+/* singleproductview */
+
+.img-zoom-lens {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    /*set the size of the lens:*/
+    width: 40px;
+    height: 40px;
+}
+
+.img-zoom-result {
+    border: 1px solid #d4d4d4;
+    /*set the size of the result div:*/
+    width: 200px;
+    height: 200px;
+}

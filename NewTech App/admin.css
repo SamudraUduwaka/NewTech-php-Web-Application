@@ -1,0 +1,81 @@
+@font-face {
+    font-family: "AsapR";
+    src: url("fonts/Asap-Regular.ttf");
+}
+
+@font-face {
+    font-family: "AsapI";
+    src: url("fonts/Asap-Italic.ttf");
+}
+
+* {
+    font-family: "AsapR";
+}
+
+.sidenav {
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 160px;
+    /* Same as the width of the sidenav */
+    font-size: 28px;
+    /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+.h:hover {
+    color: rgb(31, 34, 236);
+}
+
+.offcanvasanchors {
+    text-decoration: none;
+    color: lightgrey;
+}
+
+.productimg {
+    height: 200px;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-width: 2px;
+    border-radius: 8px;
+    border-color: blue;
+    border-style: solid;
+}
+
+.adminsigninblackimage {
+    background-image: url("adminimages/signinbackground.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 455px;
+}
